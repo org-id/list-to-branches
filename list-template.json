@@ -1,0 +1,44 @@
+{
+  "name": {
+    "en": "",
+    "local": ""
+  },
+  "url": "",
+  "description": {
+    "en": ""
+  },
+  "coverage": [],
+  "subnationalCoverage": [],
+  "structure": [],
+  "sector": [],
+  "code": "",
+  "confirmed": true,
+  "deprecated": false,
+  "listType": "",
+  "access": {
+    "availableOnline": false,
+    "onlineAccessDetails": "",
+    "publicDatabase": "",
+    "guidanceOnLocatingIds": "",
+    "exampleIdentifiers": "",
+    "languages": [
+      ""
+    ]
+  },
+  "data": {
+    "availability": [],
+    "dataAccessDetails": "",
+    "licenseStatus": "open_license",
+    "licenseDetails": "",
+    "features": []
+  },
+  "meta": {
+    "source": "",
+    "lastUpdated": ""
+  },
+  "links": {
+    "opencorporates": "",
+    "wikipedia": ""
+  },
+  "formerPrefixes": []
+}

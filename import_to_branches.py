@@ -3,7 +3,7 @@ import json
 import zipfile
 import csv
 import base64
-from collections import OrderedDict
+import datetime
 
 import requests
 import datetime
@@ -48,6 +48,8 @@ def codelist_to_github(register_codelist):
             org_list['access']['exampleIdentifiers'] = row['access/exampleIdentifiers']
             org_list['access']['onlineAccessDetails'] = row['access/onlineAccessDetails']
             org_list['access']['guidanceOnLocatingIds'] = row['access/guidanceOnLocatingIds']
+            org_list['meta']['source'] = 'ProZorro Business Register Research'
+            org_list['meta']['lastUpdated'] = str(datetime.date.today())
             edit_details(prefix, org_list)
 
 

@@ -160,12 +160,13 @@ def edit_details(prefix, org_list):
 
         print(r.json())
 
-        try:
-            pull_request = git_pull_request(prefix, org_list)
-            print(pull_request, ": ", prefix, org_list)
-        except Exception as e:
-            print(e)
-            pass
+    ## Note: automatic pull request disabled
+        # try:
+        #     pull_request = git_pull_request(prefix, org_list)
+        #     print(pull_request, ": ", prefix, org_list)
+        # except Exception as e:
+        #     print(e)
+        #     pass
 
     ## ToDo: Report back to the user on the updates...
     ## ToDo: Report back to the user on any errors...

@@ -43,7 +43,10 @@ def codelist_to_github(register_codelist):
             org_list['name']['local'] = row['name/local']
             org_list['url'] = row['url']
             org_list['description']['en'] = row['description']
-            org_list['access']['availableOnline'] = row['access/availableOnline']
+            if(org_list['access']['availableOnline'] == 'TRUE'):
+                org_list['access']['availableOnline'] = True
+            if(org_list['access']['availableOnline'] == 'FALSE')):
+                org_list['access']['availableOnline'] = False
             org_list['access']['exampleIdentifiers'] = row['access/exampleIdentifiers']
             org_list['access']['onlineAccessDetails'] = row['access/onlineAccessDetails']
             org_list['access']['guidanceOnLocatingIds'] = row['access/guidanceOnLocatingIds']

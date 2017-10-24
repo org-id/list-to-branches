@@ -60,7 +60,7 @@ def git_create_branch(branch):
     else:
         headers={}
 
-    r = requests.get("https://api.github.com/repos/BobHarper1/register/branches/master",
+    r = requests.get("https://api.github.com/repos/org-id/register/branches/master",
         headers=headers)
     master_sha = r.json()['commit']['sha']
 
@@ -69,7 +69,7 @@ def git_create_branch(branch):
         "sha":master_sha
     }
 
-    r = requests.post("https://api.github.com/repos/BobHarper1/register/git/refs", headers=headers,
+    r = requests.post("https://api.github.com/repos/org-id/register/git/refs", headers=headers,
     data=json.dumps(payload))
 
     return r
@@ -96,21 +96,21 @@ def git_pull_request(prefix, org_list):
         "base":"master"
     }
 
-    r = requests.post("https://api.github.com/repos/BobHarper1/register/pulls",
+    r = requests.post("https://api.github.com/repos/org-id/register/pulls",
             headers=headers,
             data=json.dumps(payload))
 
     return r
 
 def check_branch_exists(prefix, headers):
-    r = requests.get("https://api.github.com/repos/BobHarper1/register/branches/" + prefix, headers=headers)
+    r = requests.get("https://api.github.com/repos/org-id/register/branches/" + prefix, headers=headers)
     print(r.json())
     if('name' in r.json()):
         return True
 
 def check_list_exists_on_master(folder, prefix, headers):
     try:
-        r = requests.get("https://api.github.com/repos/BobHarper1/register/contents/lists/" + folder + "/" + prefix.lower() + ".json?ref=master",
+        r = requests.get("https://api.github.com/repos/org-id/register/contents/lists/" + folder + "/" + prefix.lower() + ".json?ref=master",
         headers=headers)
         if('name' in r.json()):
             return True
@@ -154,7 +154,7 @@ def edit_details(prefix, org_list):
         r = git_create_branch(prefix)
         print('CREATING BRANCH',r.json())
 
-        r = requests.put("https://api.github.com/repos/BobHarper1/register/contents/lists/" + folder + "/" + prefix.lower() + ".json",
+        r = requests.put("https://api.github.com/repos/org-id/register/contents/lists/" + folder + "/" + prefix.lower() + ".json",
             headers=headers,
             data=json.dumps(payload))
 

@@ -6,6 +6,8 @@ It then creates a new branch on github for each list (named after the prefix) wi
 * There is already an existing branch for that prefix code
 * There is already a list with that prefix code on the `master` branch
 
+Firstly, you will need to add a personal auth token to the environment: `export GITHUB_TOKEN="{token}"``
+
 Run:
 ```
 python3 import_to_branches.py  

@@ -4,9 +4,8 @@ import zipfile
 import csv
 import base64
 import datetime
-
+import sys
 import requests
-import datetime
 
 try:
     GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
@@ -14,7 +13,7 @@ except:
     print("need GITHUB_TOKEN")
     raise
 
-register_codelist = "business_register_codelist.csv"
+
 list_already_exist_on_master = []
 branch_already_exist = []
 
@@ -172,6 +171,8 @@ def edit_details(prefix, org_list):
     ## ToDo: Report back to the user on any errors...
 
 if __name__ == '__main__':
-    codelist_to_github(register_codelist)
+    if len(sys.argv) <= 1:
+        exit("Need to specify filename")
+    codelist_to_github(sys.argv[1])
     print("BRANCHES ALREADY EXIST:",branch_already_exist)
     print("LISTS ALREADY EXIST ON MASTER:",list_already_exist_on_master)
